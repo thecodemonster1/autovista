@@ -1,12 +1,36 @@
 <component name="ProjectDictionaryState">
   <dictionary name="mohamedazwar">
     <words>
+      <w>artefact</w>
+      <w>artefacts</w>
+      <w>autovista</w>
       <w>brandnew</w>
+      <w>casefold</w>
+      <w>colab</w>
+      <w>dtype</w>
+      <w>expm</w>
       <w>ikman</w>
+      <w>lkr</w>
+      <w>mae</w>
+      <w>mlp</w>
+      <w>ndarray</w>
+      <w>normalisation</w>
+      <w>normalise</w>
+      <w>numpy</w>
       <w>onnx</w>
+      <w>onnxruntime</w>
+      <w>optimisation</w>
+      <w>optimised</w>
+      <w>ort</w>
       <w>preds</w>
+      <w>quantisation</w>
+      <w>quantise</w>
+      <w>skl</w>
+      <w>sklearn</w>
       <w>tiptronic</w>
       <w>tronic</w>
+      <w>vercel</w>
+      <w>wasm</w>
     </words>
   </dictionary>
 </component>
