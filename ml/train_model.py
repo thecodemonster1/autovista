@@ -2,9 +2,9 @@
 
 Trains a gradient-boosting regressor on the ikman.lk vehicle dataset and
 exports it to ONNX for serving via onnxruntime-web. The script also emits
-``src/lib/model-metadata.json``, which is the single source of truth for the
+`src/lib/model-metadata.json`, which is the single source of truth for the
 feature encoding contract shared between this pipeline and the TypeScript
-inference wrapper (``src/lib/encoders.ts``).
+inference wrapper (`src/lib/encoders.ts`).
 
 Feature vector (float32, shape [1, 8]) — order must never change without
 retraining and re-emitting the metadata:
@@ -13,13 +13,13 @@ retraining and re-emitting the metadata:
 
 Categorical features are ordinal-encoded as the index of the value inside the
 sorted category list stored in the metadata file. The target is trained as
-``log1p(Price_LKR)``; consumers must apply ``expm1`` to the raw model output.
+`log1p(Price_LKR)`; consumers must apply `expm1` to the raw model output.
 
 Usage (local):
     python3 ml/train_model.py
 
 Usage (Google Colab): paste the file into a cell after uploading the CSV, and
-adjust ``DATA_PATH`` / output paths. See docs/ml-model.md for the full guide.
+adjust `DATA_PATH` / output paths. See docs/ml-model.md for the full guide.
 """
 
 from __future__ import annotations
@@ -127,7 +127,7 @@ def load_and_clean(path: Path) -> pd.DataFrame:
     df["model"] = df["model"].astype(str).str.strip()
 
     # Sellers often repeat the brand inside the model field ("BYD Atto 3") and
-    # vary the casing ("ATTO 3" vs "Atto 3"); both fragment the category space.
+    # vary the casing ("ATTO 3" vs. "Atto 3"); both fragment the category space.
     def strip_brand_prefix(row: pd.Series) -> str:
         model, brand = row["model"], row["brand"]
         if model.lower().startswith(brand.lower() + " ") and len(model) > len(brand) + 1:
@@ -194,7 +194,7 @@ def encode_features(df: pd.DataFrame, categories: dict[str, list[str]]) -> np.nd
 
 
 def export_onnx(model: GradientBoostingRegressor, n_features: int, path: Path) -> None:
-    """Convert the fitted sklearn model to ONNX and write it to ``path``."""
+    """Convert the fitted sklearn model to ONNX and write it to `path`."""
     from skl2onnx import convert_sklearn
     from skl2onnx.common.data_types import FloatTensorType
 
