@@ -2,6 +2,29 @@
 
 Step-by-step guide to prepare a development environment for AutoVista.
 
+## 0. The fast path (one command)
+
+If you just want to run the app, you only need **[Node.js 18.17+](https://nodejs.org)**. Then:
+
+```bash
+git clone <your-repository-url> autovista-app
+cd autovista-app
+./setup.sh --start        # Windows: .\setup.ps1 -Start
+```
+
+That checks your Node version, installs dependencies, verifies the AI model, and opens
+<http://localhost:3000>. The script is idempotent — re-run it any time.
+
+| Command | Result |
+| ------- | ------ |
+| `./setup.sh` | Install dependencies only |
+| `./setup.sh --start` | Install, then start the dev server |
+| `./setup.sh --verify` | Install, then lint + test + build |
+| `./setup.sh --ml` | Install, then set up the Python env for retraining |
+| `./setup.sh --all` | Everything (install + Python env + verify) |
+
+The rest of this document explains each step in detail and how to do it by hand.
+
 ## 1. Prerequisites
 
 | Tool       | Version | Purpose                                |
