@@ -25,7 +25,7 @@ You need **[Node.js 18.17+](https://nodejs.org)** installed (LTS 20 recommended)
 no database, no API keys, no environment variables. Then:
 
 ```bash
-git clone <your-repository-url> autovista-app
+git clone https://github.com/thecodemonster1/autovista.git autovista-app
 cd autovista-app
 ./setup.sh --start
 ```
@@ -37,7 +37,7 @@ That single command checks your Node version, installs everything, and opens the
 <summary><b>On Windows?</b> Use the PowerShell script instead</summary>
 
 ```powershell
-git clone <your-repository-url> autovista-app
+git clone https://github.com/thecodemonster1/autovista.git autovista-app
 cd autovista-app
 .\setup.ps1 -Start
 ```

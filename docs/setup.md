@@ -7,7 +7,7 @@ Step-by-step guide to prepare a development environment for AutoVista.
 If you just want to run the app, you only need **[Node.js 18.17+](https://nodejs.org)**. Then:
 
 ```bash
-git clone <your-repository-url> autovista-app
+git clone https://github.com/thecodemonster1/autovista.git autovista-app
 cd autovista-app
 ./setup.sh --start        # Windows: .\setup.ps1 -Start
 ```
@@ -57,7 +57,7 @@ nvm use 20
 ## 3. Clone and install
 
 ```bash
-git clone <your-repository-url> autovista-app
+git clone https://github.com/thecodemonster1/autovista.git autovista-app
 cd autovista-app
 npm install
 ```
